@@ -31,7 +31,10 @@ local Window = Rayfield:CreateWindow({
 })
 
 -- Tabs
-local VisualsTab = Window:CreateTab("Visuals", 4483362458) -- Title, Image
+local MainTab = Window:CreateTab("Main", 4483362458) -- Title, Image
+
+
+local VisualsTab = Window:CreateTab("Visuals",4483362458) -- Title, Image
 
 
 local MiscTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
@@ -167,5 +170,12 @@ local Button = VisualsTab:CreateButton({
                 end
             end)
         end)
+    end,
+ })
+
+ local Button = MainTab:CreateButton({
+    Name = "Discord Server",
+    Callback = function()
+   print("https://discord.gg/DVdTeNZcvd")
     end,
  })
