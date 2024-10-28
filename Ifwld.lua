@@ -2,6 +2,11 @@
 
 local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
 
+
+setclipboard("https://discord.gg/BwUTMr65cD")
+toclipboard("https://discord.gg/BwUTMr65cD")
+
+
 -- The UI
 
 local Window = Rayfield:CreateWindow({
@@ -14,17 +19,17 @@ local Window = Rayfield:CreateWindow({
       FileName = "Big Hub"
    },
    Discord = {
-      Enabled = false,
-      Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+      Enabled = true,
+      Invite = "nhttps://discord.gg/BwUTMr65cD", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
    },
-   KeySystem = false, -- Set this to true to use our key system
+   KeySystem = true, -- Set this to true to use our key system
    KeySettings = {
-      Title = "sussy baka key system",
-      Subtitle = "hi",
-      Note = "ask key on discord",
+      Title = "Key System",
+      Subtitle = "The Discord link is copied to clipboard.",
+      Note = "Get key on Discord Server",
       FileName = "ifwld-key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
-      SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+      SaveKey = false, -- The user's key will be saved, but if you change the key, they will be unable to use your script
       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
       Key = {"https://pastebin.com/raw/SUAZM7in"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
    }
@@ -176,6 +181,7 @@ local Button = VisualsTab:CreateButton({
  local Button = MiscTab:CreateButton({
     Name = "Discord Server",
     Callback = function()
-   print("https://discord.gg/DVdTeNZcvd")
+        setclipboard("https://discord.gg/BwUTMr65cD")
+        toclipboard("https://discord.gg/BwUTMr65cD")
     end,
  })
