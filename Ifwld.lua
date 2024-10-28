@@ -173,7 +173,7 @@ local Button = VisualsTab:CreateButton({
     end,
  })
 
- local Button = MainTab:CreateButton({
+ local Button = MiscTab:CreateButton({
     Name = "Discord Server",
     Callback = function()
    print("https://discord.gg/DVdTeNZcvd")
