@@ -1,0 +1,61 @@
+-- rayfield
+
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+-- discord
+setclipboard("https://discord.gg/BwUTMr65cD")
+toclipboard("https://discord.gg/BwUTMr65cD")
+
+
+local Window = Rayfield:CreateWindow({
+    Name = "🏙️ City Defense Tycoon 🏙️",
+    LoadingTitle = "made by ifwld",
+    LoadingSubtitle = "hi",
+    ConfigurationSaving = {
+       Enabled = true,
+       FolderName = nil, -- Create a custom folder for your hub/game
+       FileName = "seraph hub"
+    },
+    Discord = {
+       Enabled = false,
+       Invite = "noinvitelink", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD
+       RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+    },
+    KeySystem = true, -- Set this to true to use our key system
+    KeySettings = {
+       Title = "Seraph Hub",
+       Subtitle = "Join Discord For Key.",
+       Note = "Discord link is copied to Clipboard.",
+       FileName = "key", -- It is recommended to use something unique as other scripts using Rayfield may overwrite your key file
+       SaveKey = true, -- The user's key will be saved, but if you change the key, they will be unable to use your script
+       GrabKeyFromSite = true, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+       Key = {"https://pastebin.com/raw/SUAZM7in","https://pastebin.com/raw/AmS69Cqc"} -- List of keys that will be accepted by the system, can be RAW file links (pastebin, github etc) or simple strings ("hello","key22")
+    }
+ })
+
+ -- tabs
+
+ local MainTab = Window:CreateTab("Main", 4483362458) -- Title, Image
+
+ local Button = MainTab:CreateButton({
+    Name = "Auto Money (Infinite, OP)",
+    Callback = function()
+        while wait() do
+            game:GetService("ReplicatedStorage").Knit.Services.TycoonService.RF.PayIncome:InvokeServer(game:GetService("Players").LocalPlayer)
+         end
+    end,
+ })
+ 
+
+ local Button = MainTab:CreateButton({
+    Name = "Auto Rebirth (Gotta Finish Tycoon First)",
+    Callback = function()
+        while wait() do
+            game:GetService("ReplicatedStorage").Knit.Services.TycoonService.RF.Rebirth:InvokeServer()
+         end    
+    end,
+ })
+ 
+ while wait() do
+    game:GetService("ReplicatedStorage").Knit.Services.TycoonService.RF.Rebirth:InvokeServer()
+ end
