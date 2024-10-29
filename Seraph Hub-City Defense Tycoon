@@ -40,6 +40,21 @@ local Window = Rayfield:CreateWindow({
 
  local MiscTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
 
+local Button = MiscTab:CreateButton({
+    Name = "Destroy Hub (Closes the Hub)",
+    Callback = function()
+        Rayfield:Destroy()
+    end,
+ })
+
+ local Button = MiscTab:CreateButton({
+    Name = "Discord Link",
+    Callback = function()
+        setclipboard("https://discord.gg/BwUTMr65cD")
+        toclipboard("https://discord.gg/BwUTMr65cD")
+    end,
+ })
+
 
  local Button = MainTab:CreateButton({
     Name = "Auto Money (Infinite, OP)",
@@ -63,21 +78,3 @@ local Window = Rayfield:CreateWindow({
  while wait() do
     game:GetService("ReplicatedStorage").Knit.Services.TycoonService.RF.Rebirth:InvokeServer()
  end
-
-
- local Button = MiscTab:CreateButton({
-    Name = "Discord Link",
-    Callback = function()
-        https://discord.gg/BwUTMr65cD
-    end,
- })
-
-
-
-
- local Button = MiscTab:CreateButton({
-    Name = "Destroy Hub (Closes the Hub)",
-    Callback = function()
-        Rayfield:Destroy()
-    end,
- })
