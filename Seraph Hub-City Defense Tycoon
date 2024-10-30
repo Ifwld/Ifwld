@@ -40,6 +40,17 @@ local Window = Rayfield:CreateWindow({
 
  local MiscTab = Window:CreateTab("Misc", 4483362458) -- Title, Image
 
+
+ local TycoonTab = Window:CreateTab("Tycoon", 4483362458) -- Title, Image
+
+ local Button = TycoonTab:CreateButton({
+   Name = "Auto Finish Tycoon (WIP)",
+   Callback = function()
+   -- The function that takes place when the button is pressed
+   end,
+})
+
+
 local Button = MiscTab:CreateButton({
     Name = "Destroy Hub (Closes the Hub)",
     Callback = function()
