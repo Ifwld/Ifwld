@@ -8,7 +8,7 @@ toclipboard("https://discord.gg/BwUTMr65cD")
 
 local TiepUI = loadstring(game:HttpGet("https://raw.githubusercontent.com/DexCodeSX/SensationX-Scripting/refs/heads/Blox/SystemNotfiUI/TiepUI.lua"))()
 
-TiepUI.notify("Seraph Hub", "Succesfully Executed, Thank You For Using Seraph Hub", 5, "info")
+TiepUI.notify("Seraph Hub", "Succesfully Executed, Thank You For Using Seraph Hub", 8, "info")
 
 -- The UI
 
