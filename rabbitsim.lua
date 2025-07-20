@@ -44,7 +44,7 @@ TextButton_2.TextSize = 14.000
 
 -- Scripts:
 
-local function MWNKZHN_fake_script() -- TextButton.LocalScript 
+local function MKDU_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local ScreenGui = script.Parent.Parent -- Bu kodun ScreenGui'nin içinde bir yerde olduğunu varsayıyoruz
@@ -57,8 +57,8 @@ local function MWNKZHN_fake_script() -- TextButton.LocalScript
 		print("ScreenGui yok edildi!")
 	end)
 end
-coroutine.wrap(MWNKZHN_fake_script)()
-local function XNCDNO_fake_script() -- TextButton_2.LocalScript 
+coroutine.wrap(MKDU_fake_script)()
+local function BZQICWP_fake_script() -- TextButton_2.LocalScript 
 	local script = Instance.new('LocalScript', TextButton_2)
 
 	local textButton = script.Parent -- Scriptin parent'ı olan TextButton
@@ -69,25 +69,26 @@ local function XNCDNO_fake_script() -- TextButton_2.LocalScript
 		-- Eğer kod şu anda çalışmıyorsa (isRunning false ise)
 		if not isRunning then
 			isRunning = true -- Durumu "çalışıyor" olarak ayarla
-			textButton.Text = "AutoCarrot" -- Buton metnini değiştir
-			print("AutoCarrot has started, press again to stop")
+			textButton.Text = "Auto Carrot" -- Buton metnini değiştir
+			print("Auto Carrot has been started -- press again to disable.")
 	
 			-- Kodu çalıştıran döngü
-			while isRunning do -- isRunning true olduğu sürece çalışacak
-				-- Senin mevcut otomatik havuz kodun buraya geliyor
+			while isRunning and wait() do -- isRunning true olduğu sürece ve her döngüde kısa bir bekleme ile çalışacak
+				-- Senin mevcut otomatik havuç kodun buraya geliyor
 				game.Players.LocalPlayer.Backpack.Carrot.E:FireServer()
+				-- Herhangi bir ek bekleme süresi eklemeye gerek yok çünkü 'wait()' zaten bir bekleme sağlar.
+				-- Ancak daha yavaş çalışmasını istersen buraya 'wait(0.5)' gibi bir değer ekleyebilirsin.
 			end
 			-- Döngü bittiğinde (yani isRunning false olduğunda)
-			print("Auto Carrot has been stopped..")
+			print("Auto Carrot has been stopped.")
 	
 			-- Eğer kod şu anda çalışıyorsa (isRunning true ise)
 		else
 			isRunning = false -- Durumu "durduruldu" olarak ayarla
-			print("Otomatik Havuç Durduruluyor...")
 		end
 	end)
 	
 	-- Oyun başladığında veya script yüklendiğinde buton metnini ayarla
-	textButton.Text = "AutoCarrot"
+	textButton.Text = "Auto Carrot"
 end
-coroutine.wrap(XNCDNO_fake_script)()
+coroutine.wrap(BZQICWP_fake_script)()
