@@ -44,7 +44,7 @@ TextButton_2.TextSize = 14.000
 
 -- Scripts:
 
-local function GUWC_fake_script() -- TextButton.LocalScript 
+local function MWNKZHN_fake_script() -- TextButton.LocalScript 
 	local script = Instance.new('LocalScript', TextButton)
 
 	local ScreenGui = script.Parent.Parent -- Bu kodun ScreenGui'nin içinde bir yerde olduğunu varsayıyoruz
@@ -57,16 +57,37 @@ local function GUWC_fake_script() -- TextButton.LocalScript
 		print("ScreenGui yok edildi!")
 	end)
 end
-coroutine.wrap(GUWC_fake_script)()
-local function DAEOIX_fake_script() -- TextButton_2.LocalScript 
+coroutine.wrap(MWNKZHN_fake_script)()
+local function XNCDNO_fake_script() -- TextButton_2.LocalScript 
 	local script = Instance.new('LocalScript', TextButton_2)
 
-	local textButton = script.Parent
+	local textButton = script.Parent -- Scriptin parent'ı olan TextButton
+	
+	local isRunning = false -- Kodun şu an çalışıp çalışmadığını takip eden değişken
 	
 	textButton.MouseButton1Click:Connect(function()
-		while wait() do
-			game.Players.LocalPlayer.Backpack.Carrot.E:FireServer()
+		-- Eğer kod şu anda çalışmıyorsa (isRunning false ise)
+		if not isRunning then
+			isRunning = true -- Durumu "çalışıyor" olarak ayarla
+			textButton.Text = "AutoCarrot" -- Buton metnini değiştir
+			print("AutoCarrot has started, press again to stop")
+	
+			-- Kodu çalıştıran döngü
+			while isRunning do -- isRunning true olduğu sürece çalışacak
+				-- Senin mevcut otomatik havuz kodun buraya geliyor
+				game.Players.LocalPlayer.Backpack.Carrot.E:FireServer()
+			end
+			-- Döngü bittiğinde (yani isRunning false olduğunda)
+			print("Auto Carrot has been stopped..")
+	
+			-- Eğer kod şu anda çalışıyorsa (isRunning true ise)
+		else
+			isRunning = false -- Durumu "durduruldu" olarak ayarla
+			print("Otomatik Havuç Durduruluyor...")
 		end
 	end)
+	
+	-- Oyun başladığında veya script yüklendiğinde buton metnini ayarla
+	textButton.Text = "AutoCarrot"
 end
-coroutine.wrap(DAEOIX_fake_script)()
+coroutine.wrap(XNCDNO_fake_script)()
